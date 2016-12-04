@@ -4,9 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Blog</title>
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<title>Ethiopian and Eritrean Music, Movies and Dramas</title>
 		<link href="/styles/site.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cinzel:900%7CDroid+Sans" rel="stylesheet">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
 		{{!-- This file provides the default styling for the KeystoneJS Content Editor
 			- only renders when user is logged in and admin--}}
@@ -21,37 +22,50 @@
 
 	</head>
 	<body>
-		<div id="header">
-			<div class="container">
-				<div role="navigation" class="navbar navbar-default">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-							</button>
-							<a href="/" class="navbar-brand">Blog</a>
-						</div>
-						<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav navbar-left">
-									{{# each navLinks}}
+		      <header>
+        <div class="utility-bar">
+          <div class="social">
+            <a href="#" title="Facebook">
+              <img src="/images/facebook.svg" alt="Facebook">
+            </a>
+             <a href="#" title="twitter">
+              <img src="/images/twitter.svg" alt="twitter">
+            </a>
+            <a href="#" title="Google">
+              <img src="/images/google-plus.svg" alt="google">
+            </a>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#" title="About">About</a></li>
+              <li><a href="#" title="Contact">Contact</a></li>
+            </ul>
+          </nav>
+         <!-- <div class="search">
+            <input type="text" role="search" placeholder="Music and Movies">
+          </div> -->
+        </div>
+        <div class="site-title">
+			<h1>
+				<a href="/">
+				<span>Everything</span> Habesha
+				</a>
+          	</h1>
+          <p>We watch Ethiopian and Eritrean Music, Movies, Dramas, Tv shows and write an honest review!</p>
+        </div>
+        <nav class="main-nav">
+          <ul>
+						{{# each navLinks}}
 									<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-										<a href="{{ href }}">{{ label }}</a>
+										<a href="{{ href }}" title="{{label}}">{{ label }}</a>
 									</li>
-								{{/each}}
-							</ul>
-							<ul class="nav navbar-nav navbar-right">
-								{{#if user}}
-								<li><a href="/keystone/signout">Sign Out</a></li>
-								{{else}}
-								<li><a href="/keystone/signin">Sign In</a></li>
-								{{/if}}
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+						{{/each}}
+          </ul>
+        </nav>
+      </header>
+      <div class="adsense">
+
+      </div>
 		<div id="body">
 			<!--
 				Flash messages allow you to display once-off status messages to users, e.g. form
@@ -84,11 +98,9 @@
 			<!-- The content block should contain the body of your template's content-->
 			{{{body}}}
 		</div>
-		<div class="container">
-			<div id="footer">
-				<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
-			</div>
-		</div>
+		<footer>
+			© 2016 Everything Habesha
+		</footer>
 		{{!--
 			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
 			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
