@@ -1,17 +1,20 @@
 {{!< default}}
 <main>
+	<header>
+		<h1>{{data.category.name}}</h1>
+	</header>
 	<div class="post-list">
-		{{# each data.posts.results}}
-			<article class="post-card">
+			{{# each data.posts.results}}<!--
+			--><article class="post-card">
 				<a href="{{href}}" title="Article title">
 					<div class="thumbnail">
 					<img src="{{imageURL}}" alt="Article title goes here">
 					</div>
 					<h2>{{{title}}}</h2>
 				</a>
-				<p>{{{content.brief}}}</p>
-			</article>
-		{{/each}}
+				{{{content.brief}}}
+			</article><!--
+		-->{{/each}}
 	</div>
 	<!-- <div class="pagination">
 	pagination goes here
