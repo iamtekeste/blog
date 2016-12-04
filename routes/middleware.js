@@ -30,7 +30,7 @@ exports.initLocals = function (req, res, next) {
  * Fetches Post Category for setting up navigation links
  */
 function getNavigationLinks(cb) {
-			keystone.list('PostCategory').model.find().sort('name').exec(function (err, results) {
+			keystone.list('PostCategory').model.find().exec(function (err, results) {
 
 			if (err || !results.length) {
 				return next(err);
