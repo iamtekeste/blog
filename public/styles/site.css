@@ -1,13 +1,201 @@
-#header {
-  margin-top: 30px; }
+* {
+  box-sizing: border-box; }
 
-#footer {
-  margin-top: 30px;
-  border-top: 1px solid #eeeeee;
-  padding-top: 30px;
-  color: #777777; }
+body {
+  font-family: 'Droid Sans', sans-serif; }
 
-.gallery-image img {
-  display: block;
-  max-width: 100%;
-  height: auto; }
+.wrapper {
+  margin: 0px 15px; }
+
+h1 {
+  font-family: 'Cinzel', serif; }
+
+ul {
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+header {
+  margin-top: 25px;
+  margin-bottom: 25px; }
+
+.utility-bar .social, .utility-bar .search, .utility-bar nav {
+  display: inline-block;
+  vertical-align: top;
+  width: 49%; }
+
+.utility-bar nav {
+  text-align: right; }
+
+.social a img {
+  width: 30px;
+  margin-right: 10px; }
+
+nav {
+  text-align: center; }
+  nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 20px; }
+    nav ul li a {
+      position: relative; }
+      nav ul li a:after {
+        content: "";
+        position: absolute;
+        border-bottom: 1px solid #fff;
+        bottom: -10px;
+        left: 0;
+        width: 40%;
+        transition: all .3s ease-in-out; }
+      nav ul li a:hover:after {
+        width: 100%; }
+
+.search input {
+  width: 80%;
+  height: 30px;
+  padding-left: 10px;
+  border: 1px solid black; }
+
+.site-title {
+  text-align: center; }
+  .site-title h1 {
+    font-size: 50px;
+    margin-bottom: 20px; }
+    .site-title h1 span {
+      color: #ff5f2e; }
+  .site-title p {
+    font-size: 24px; }
+
+nav.main-nav {
+  background: #003459;
+  padding: 30px 30px;
+  margin-right: -15px;
+  margin-left: -15px; }
+  nav.main-nav a {
+    color: #fff; }
+
+main {
+  margin-top: 20px; }
+
+main {
+  max-width: 1200px;
+  margin: 0 auto; }
+  main article.post-card {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 15px;
+    width: 25%;
+    margin-bottom: 25px; }
+    main article.post-card a {
+      position: relative;
+      display: inline-block; }
+      main article.post-card a:after {
+        content: ""; }
+      main article.post-card a:hover img {
+        transform: scale(1.1); }
+      main article.post-card a:hover h2 {
+        text-decoration: underline; }
+    main article.post-card div.thumbnail {
+      overflow: hidden; }
+      main article.post-card div.thumbnail img {
+        max-width: 100%;
+        display: inline-block;
+        transition: all .3s ease-in-out;
+        vertical-align: top; }
+    main article.post-card h2 {
+      color: #167ac6;
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 11px;
+      display: inline-block; }
+    main article.post-card p {
+      margin-top: 5px;
+      margin-bottom: 0; }
+
+footer {
+  text-align: center;
+  margin-top: 25px;
+  padding: 26px 0px;
+  background: #003459;
+  margin-right: -15px;
+  margin-left: -15px;
+  color: #fff;
+  line-height: 1; }
+
+@media all and (max-width: 992px) {
+  main article.post-card {
+    width: 33.3333%; } }
+
+@media all and (max-width: 768px) {
+  nav.main-nav a:after {
+    display: none; }
+  main article.post-card {
+    width: 50%; } }
+
+@media all and (max-width: 600px) {
+  header {
+    margin-top: 0px; }
+  .utility-bar {
+    display: none; }
+  .site-title h1 {
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: 10px; }
+  .site-title p {
+    font-size: 16px; }
+  nav.main-nav {
+    text-align: left;
+    padding: 15px 30px; }
+    nav.main-nav ul li {
+      display: block;
+      margin-bottom: 15px; }
+      nav.main-nav ul li a:after {
+        display: none; }
+    nav.main-nav ul li:last-child {
+      margin-bottom: 0; }
+  main article.post-card {
+    width: 100%; } }
+
+main.post article.content, main.post .right-sidebar {
+  display: inline-block;
+  vertical-align: top; }
+
+main.post article.content {
+  width: 70%; }
+  main.post article.content h1 {
+    font-size: 25px;
+    margin-top: 50px;
+    font-family: "Droid Sans";
+    font-weight: bold; }
+  main.post article.content p {
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0; }
+
+main.post .right-sidebar {
+  padding-left: 15px;
+  padding-top: 25px;
+  width: 30%; }
+  main.post .right-sidebar article {
+    width: 100%;
+    margin-bottom: 10px; }
+
+main.post .youtube-player {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
+  padding-top: 25px;
+  height: 0; }
+  main.post .youtube-player iframe {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important; }
+
+@media all and (max-width: 768px) {
+  main.post article.content, main.post .right-sidebar {
+    width: 100%; }
+  main.post .right-sidebar {
+    padding-left: 0px; } }

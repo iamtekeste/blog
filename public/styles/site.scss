@@ -1,21 +1,221 @@
-// Bootstrap
-// =========
+$link-color: #000;
+$secondary-brand-color: #003459;
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Droid Sans', sans-serif;
+}
+.wrapper {
+    margin: 0px 15px;
+}
+h1 {
+    font-family: 'Cinzel', serif;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: $link-color;
+}
+header {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.utility-bar {
+    .social, .search, nav {
+        display: inline-block;
+        vertical-align: top;
+        width: 49%;
+    }
+    nav {
+        text-align: right;
+    }
+}
+.social {
+    a {
+        img {
+        width: 30px;
+        margin-right: 10px;
+        }
+    }
+}
+nav {
+    text-align: center;
+     ul li {
+        list-style: none;
+        display: inline-block;
+        padding-right: 20px;
+         a {
+             position: relative;
+             &:after {
+                content: "";
+                position: absolute;
+                border-bottom: 1px solid #fff;
+                bottom: -10px;
+                left: 0;
+                width: 40%;
+                transition: all .3s ease-in-out;
+                
+             }
+             &:hover {
+                 &:after {
+                     width: 100%;
+                 }
+             }
+         }
+    }
+}
+.search {
+    input {
+        width: 80%;
+        height: 30px;
+        padding-left: 10px;
+        border: 1px solid black;
+    }
+}
+.site-title {
+    text-align: center; 
+    h1 {
+        font-size: 50px;
+        margin-bottom: 20px; 
+        span {
+            color: #ff5f2e;
+        }
+    }
+    p {
+        font-size: 24px;
+    }
+}
 
-// Bootstrap can be removed entirely by deleting this line.
+nav.main-nav {
+    background: $secondary-brand-color;
+    padding: 30px 30px;
+    margin-right: -15px;
+    margin-left: -15px;
+    a {
+        color: #fff;
+    }
+}
+main {
+    margin-top: 20px;
+}
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    article.post-card {
+        display: inline-block;
+        vertical-align: top;
+        padding-right: 15px;
+        width: 25%;
+        margin-bottom: 25px;
+        a {
+            position: relative;
+            display: inline-block;
+            &:after {
+                content: ""
+            }
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+                h2 {
+                    text-decoration: underline;
+                }
+            }   
+        }
+        div.thumbnail {
+            overflow: hidden;
+            img {
+                max-width: 100%;
+                display: inline-block;
+                transition: all .3s ease-in-out;
+                vertical-align: top;
+            }
+        }
+        h2 {
+            color: #167ac6;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 11px;
+            display: inline-block
+        }
+        p {
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+    }
+}
+footer {
+    text-align: center;
+    margin-top: 25px;
+    padding: 26px 0px;
+    background: #003459;
+    margin-right: -15px;
+    margin-left: -15px;
+    color: #fff;
+    line-height: 1;
+}
+//media queries
+@media all and (max-width: 992px) {
+        main {
+    article.post-card {
+        width: 33.3333%;
+    }
+} 
+}
+@media all and (max-width: 768px) {
+    nav.main-nav {
+        a {
+            &:after {
+                display: none;
+            }
+        }
+    }
+    main {
+    article.post-card {
+        width: 50%;
+    }
+} 
+}
+@media all and (max-width: 600px) {
+    header {
+        margin-top: 0px;
+    }
+    .utility-bar {
+        display: none;
+    }
+    .site-title h1 {
+        font-size: 40px;
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+    .site-title p {
+    font-size: 16px;
+}
+nav.main-nav {
+    text-align: left;
+    padding: 15px 30px;
+    ul li {
+    display: block;
+    margin-bottom: 15px;
+        a {
+        &:after {
+            display: none;
+        }
+    }
+}
+ul li:last-child {
+    margin-bottom: 0;
+}
+}
+main {
+    article.post-card {
+        width: 100%;
+    }
+} 
+}
 
-
-// The easiest way to customise Bootstrap variables while
-// being able to easily override the source files with new
-// versions is to override the ones you want in another file.
-//
-// You can also add your own custom variables to this file for
-// use in your site stylesheets.
-
-@import "site/variables";
-
-
-// Site Styles
-// ===========
-
-// Add your own site style includes here
-@import "site/layout";
+@import "post";

@@ -1,0 +1,51 @@
+main.post {
+    article.content, .right-sidebar {
+        display: inline-block;
+        vertical-align: top;
+    }
+    article.content {
+        width: 70%;
+        h1 {
+            font-size: 25px;
+            margin-top: 50px;
+            font-family: "Droid Sans";
+            font-weight: bold;
+        }
+        p {
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 0;
+        }
+    }
+    .right-sidebar {
+        padding-left: 15px;
+        padding-top: 25px;
+        width: 30%;
+        article {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+    .youtube-player {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        padding-top: 25px;
+        height: 0;
+    iframe {
+        position: absolute;
+        width: 100%!important;
+        height: 100%!important;
+    }
+}
+}
+
+@media all and (max-width: 768px) {
+    main.post {
+        article.content, .right-sidebar {
+            width: 100%;
+        }
+        .right-sidebar {
+           padding-left: 0px;
+        }
+    }
+}
