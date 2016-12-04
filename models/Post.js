@@ -20,6 +20,7 @@ Post.add({
 	content: {
 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
+		youtubeCode: {type: Types.Html, wysiwyg: false, height: 150}
 	},
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
 });
