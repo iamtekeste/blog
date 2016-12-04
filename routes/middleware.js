@@ -8,6 +8,7 @@
  * modules in your project's /lib directory.
  */
 var _ = require('lodash');
+var keystone = require('keystone');
 
 
 /**
@@ -18,15 +19,33 @@ var _ = require('lodash');
 	or replace it with your own templates / logic.
 */
 exports.initLocals = function (req, res, next) {
-	res.locals.navLinks = [
-		{ label: 'Home', key: 'home', href: '/' },
-		{ label: 'Blog', key: 'blog', href: '/blog' },
-		{ label: 'Contact', key: 'contact', href: '/contact' },
-	];
+	getNavigationLinks(function(navLinks) {
+		res.locals.navLinks = navLinks;
+	});
 	res.locals.user = req.user;
 	next();
 };
 
+/**
+ * Fetches Post Category for setting up navigation links
+ */
+function getNavigationLinks(cb) {
+			keystone.list('PostCategory').model.find().sort('name').exec(function (err, results) {
+
+			if (err || !results.length) {
+				return next(err);
+			}
+			var navLinks = [];
+			navLinks = results.map(function(postCategory) {
+							var newNavLink = {};
+							newNavLink.label = postCategory.name;
+							newNavLink.key = postCategory.key;
+							newNavLink.href = postCategory.key;
+							return newNavLink;
+						});
+			cb(navLinks);
+		});
+}
 
 /**
 	Fetches and clears the flashMessages before a view is rendered
