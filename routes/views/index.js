@@ -8,7 +8,17 @@ exports = module.exports = function (req, res) {
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'home';
-
+	locals.data = {
+		posts: []
+	};
+	//Load all the posts
+	view.on('init', function(next) {
+		var q = keystone.list('Post').model.find();
+		q.exec(function(err, results) {
+			locals.data.posts = results;
+			next(err);
+		});
+	})
 	// Render the view
 	view.render('index');
 };
