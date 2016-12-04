@@ -40,9 +40,14 @@ function getNavigationLinks(cb) {
 							var newNavLink = {};
 							newNavLink.label = postCategory.name;
 							newNavLink.key = postCategory.key;
-							newNavLink.href = postCategory.key;
+							newNavLink.href = '/category/' + postCategory.key;
 							return newNavLink;
 						});
+			navLinks.unshift({
+				label: 'Home',
+				key: 'home',
+				href: '/'
+			});
 			cb(navLinks);
 		});
 }
