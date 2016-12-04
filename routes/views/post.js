@@ -20,7 +20,7 @@ exports = module.exports = function (req, res) {
 		var q = keystone.list('Post').model.findOne({
 			state: 'published',
 			slug: locals.filters.post,
-		}).populate('author categories');
+		}).populate('categories');
 
 		q.exec(function (err, result) {
 			locals.data.post = result;
@@ -29,13 +29,12 @@ exports = module.exports = function (req, res) {
 
 	});
 
-	// Load other posts
+	// Load related posts for the sidebar
 	view.on('init', function (next) {
 
-		var q = keystone.list('Post').model.find().where('state', 'published').sort('-publishedDate').populate('author').limit('4');
-
+		var q = keystone.list('Post').model.find().where({'slug': {'$ne':locals.data.post.slug}}).where('categories').in(locals.data.post.categories).sort('-publishedDate').limit('4');
 		q.exec(function (err, results) {
-			locals.data.posts = results;
+			locals.data.relatedPosts = results;
 			next(err);
 		});
 

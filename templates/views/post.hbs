@@ -1,39 +1,25 @@
       <main class="post"><!--
           --><article class="content">
               <div class="youtube-player">
-				  {{{data.post.youtubeEmbed}}}
+				        {{{data.post.youtubeEmbed}}}
               </div>
               <header>
                   <h1>
                       {{data.post.title}}
                   </h1>
               </header>
-              <p>
-				  {{{data.post.content.extended}}}
-              </p>
+    				  {{{data.post.content.extended}}}
           </article><!--
           --><div class="right-sidebar">
-                                      <article class="post-card">
-              <a href="#" title="Article title">
-                <div class="thumbnail">
-                  <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=336&h=240" alt="Article title goes here">
-                </div>
-                <h2>Semhar Yohannes - Ksiereka´ye | ክስዕረካ´የ Eritrean Music 2016</h2>
-              </a>
-            </article><!--
-           --><article class="post-card">
-              <a href="#" title="article title">
-<div class="thumbnail">
-                  <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=336&h=240" alt="Article title goes here">
-                </div>                <h2>Article title</h2>
-              </a>
-            </article>
-                       <article class="post-card">
-              <a href="#" title="article title">
-<div class="thumbnail">
-                  <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=336&h=240" alt="Article title goes here">
-                </div>                <h2>Article title</h2>
-              </a>
-            </article>
+              {{# each data.relatedPosts}}
+                <article class="post-card">
+                  <a href="{{href}}" title="Article title">
+                    <div class="thumbnail">
+                    <img src="{{imageURL}}" alt="Article title goes here">
+                    </div>
+                    <h2>{{{title}}}</h2>
+                  </a>
+                </article>
+              {{/each}}
           </div>
       </main>
