@@ -33,7 +33,7 @@ function getNavigationLinks(cb) {
 			keystone.list('PostCategory').model.find().exec(function (err, results) {
 
 			if (err || !results.length) {
-				return next(err);
+//				return next(err);
 			}
 			var navLinks = [];
 			navLinks = results.map(function(postCategory) {
