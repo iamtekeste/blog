@@ -34,6 +34,12 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	letsencrypt: (process.env.NODE_ENV === 'production') && {
+		email: 'tekeste.kidanu@gmail.com',
+		domains: ['www.myhabesha.net', 'myhabesha.net'],
+		register: true,
+		tos: true,
+	}
 });
 
 // Load your project's Models
