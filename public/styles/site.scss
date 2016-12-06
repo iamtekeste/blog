@@ -68,6 +68,11 @@ nav {
                  }
              }
          }
+         a.active {
+            &:after {
+                width: 100%;
+            }
+         }
     }
 }
 .search {
